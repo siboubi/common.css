@@ -49,10 +49,7 @@ body {
     /*font-family:Myriad, Helvetica, Arial, "Meiryo", "メイリオ", sans-serif;*/
     /* for Chinese */
     font-family: Tahoma, Helvetica, Arial/*, "\5b8b\4f53"*/, sans-serif;
-    /* 13px */
-    /*font-size: 81.25%;*/
-    /* 12px */
-    font-size:75%;
+    font-size:13px;
     line-height: 1.5;
     text-align: left;
 }
@@ -60,12 +57,12 @@ body {
 /* for IE6 */
 
 * html body {
-    font-size: 75%;
+    font-size: 82%;
 }
 
 /*for IE7 */
 *:first-child+html body {
-    font-size: 75%;
+    font-size: 82%;
 }
 
 /*
@@ -142,6 +139,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 100%;
+    font-family:inherit;
 }
 
 caption, th, td {
@@ -165,6 +163,7 @@ input, textarea, select, label {
     padding-bottom: 0;
     font-size: 100%;
     vertical-align: middle;
+    font-family:inherit;
 }
 
 input[type="text"] {
@@ -172,7 +171,7 @@ input[type="text"] {
     /*border: none;*/
 }
 
-input[type="button"], input[type="submit"], input[type="checkbox"]{
+label, input[type="button"], input[type="submit"], input[type="checkbox"]{
     cursor:pointer;
 }
 
@@ -180,10 +179,6 @@ textarea {
     padding: 2px 3px;
     border: none;
     overflow: auto;
-}
-
-label {
-    cursor: pointer;
 }
 
 /* --------------------------------------------------
@@ -248,15 +243,9 @@ hr{ *color:#fff; }  /* for IE7 */
 /* ------------------------------------------------------------
 	8. Clear Fix
 ------------------------------------------------------------ */
-.group:after {
-    content: ".";
+.group {*zoom: 1} /*for IE6/7*/
+.group:after{
+    content: "";
     display: block;
     clear: both;
-    visibility: hidden;
-    line-height:0;
-    height:0;
-    font-size:0em;
 }
-
-* html .group { zoom: 1; } /* for IE6 */
-*:first-child+html .group { zoom: 1; } /* for IE7 */
